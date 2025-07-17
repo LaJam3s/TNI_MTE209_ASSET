@@ -1,0 +1,51 @@
+body{
+     margin: 0px 0px 0px 0px; /* margin */
+}
+h1{
+    margin: 0px 0px 10px 0px;
+}
+.container{ /* . is for custom tag */
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.padding{
+    padding: 10px;
+}
+.justify{
+    text-align: justify;
+}
+.martop{
+    margin-top: 10px;
+}
+
+#test{
+    background-color: rgb(229, 229, 156);
+}
+
+#row1{ /* # is id */
+    background-color: bisque;
+    border-radius: 10px 0px 0px 10px; /* LEFTTOP RIGHTTOP RIGHTSOUS LEFTSOUS*/
+}
+
+#row2{
+    display: flex;
+}
+#row2-1{
+    background-color: gainsboro;
+    border-radius: 10px 0px 0px 10px;
+    flex: 2;
+}
+#row2-2{
+    background-color: yellowgreen;
+    flex: 1;
+}
+#row2-3{
+    background-color: pink;
+    border-radius: 0px 10px 10px 0px;
+    flex: 1;
+}
+#row3{
+    background-color: rgb(159, 79, 167);
+}
