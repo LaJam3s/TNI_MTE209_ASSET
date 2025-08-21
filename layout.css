@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+#row3{
+	background-color: #562721;
+	
+}
+#row3-1{}
+#row3-2{
+	background: url("image/ICXC2.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 400px;
+}
+
+#row4{
+	background-color: #562721;
+	
+}
+#row4-1{}
+#row4-2{
+	background: url("image/MRY2.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 400px;
+}

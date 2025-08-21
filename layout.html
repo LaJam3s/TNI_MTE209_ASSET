@@ -19,6 +19,13 @@
         rel="stylesheet"
         href="https://site-assets.fontawesome.com/releases/v7.0.0/css/regular.css"
       >
+	
+	 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="aos-master/dist/aos.css">
+	<script src="aos-master/dist/aos.js">  </script>
+	
+	<link rel="stylesheet" href="layout.css">
   </head>
   <body> 
 	  <nav class="navbar navbar-expand-lg bg-warning navbar-dark">
@@ -66,27 +73,27 @@
   </div>
 </nav>
 	  <div class="container-lg"> 
-	  		<div id="row1" class="p-5 bg-warning-subtle rounded mt-3 col-lg-12">
+	  		<div id="row1" data-aos="fade-in" data-aos-duration="3000" class="p-5 bg-warning-subtle rounded mt-3 col-lg-12">
 		 	<h1 align="center" class="display-3 p-2 me-2 fw-semibold">The Christian Orthodox</h1>
 		 	<div class="fs-5 lead">The Eastern Orthodox Church, officially the Orthodox Catholic Church, and also called the Greek Orthodox Church or simply the Orthodox Church, is one of the three major doctrinal and jurisdictional groups of Christianity, with approximately 230 million baptised members. It operates as a communion of autocephalous churches, each governed by its bishops via local synods.</div>
 		  	<button class="btn btn-danger btn-lg me-5">
-				<i class="fa-solid fa-cross"></i> Details </button>	  
+				<i class="fa-solid fa-cross btn" type="button" href="https://archive.org/details/the-orthodox-study-bible-2021-medium-quality-scan" target="_blank"></i> Details </button>	  
 			 </div>
 		  
-		  <div id="row2" class="row col-lg-12 p-5" align="center">
+		  <div id="row2" data-aos="fade-up" data-aos-duration="1000" class="row col-lg-12 p-5" align="center">
 		 	 <div class="col-lg mt-3" align="center">
 				<img src="image/ocean.jpg" class="img-fluid rounded">
 				<h2>Beyond the Sea</h2>	
 				<div>Beyond the Sea, somewhere waiting for me</div>
 				 
 			  </div>
-		 	 <div class="col-lg mt-3" align="center">
+		 	 <div class="col-lg mt-3" data-aos="fade-up" data-aos-duration="2000" align="center">
 				<img src="image/dimoo.jpg" class="img-fluid rounded">
 				<h2>Dimoo</h2>	
 				<div>Whatever this thing is ahhh kind of stuff</div>
 				 
 			  </div>
-		 	 <div class="col-lg mt-3" align="center">
+		 	 <div class="col-lg mt-3"data-aos="fade-up" data-aos-duration="2000" align="center">
 				<img src="image/hirono.jpg" class="img-fluid rounded">
 				<h2>Another thing</h2>	
 				<div>jesus christ what is this thingy figure anyway??</div>
@@ -94,6 +101,26 @@
 			  </div>
 		  </div>
 			   
+	  </div>
+	  
+	  <div id="row3" class="row g-0 mt-3">
+	  	<div class="col-lg p-5 my-auto" data-aos="fade-right" id="row3-1">
+		  <h1 class="fw-bold text-white">Jesus our Lord and saviour</h1>
+		  <div class="text-white">The Lord who died for our sins, cleanse our darkness of mind, brough the light of God upon our land, thy kingdom is none but heavens, salvation is nothing without faith, faith is nothing without the work.</div>
+		  </div>
+		<div class="col-lg p-5 my-auto" id="row3-2">
+		  
+		  </div>
+	  </div>
+	  
+	   <div id="row4" class="row g-0">
+	  	<div class="col-lg p-5 my-auto order-lg-2" data-aos="fade-left" id="row4-1">
+		  <h1 class="fw-bold text-white">Theotokos the blessed</h1>
+		  <div class="text-white">The Lord who born into our world of earthly sins, raised and rise from Theotokos the blessed, saviour and hear our prayer for prayer to our Lord and only saviour. </div>
+		  </div>
+		<div class="col-lg p-5 my-auto order-lg-1" id="row4-2">
+		  
+		  </div>
 	  </div>
 	  
 	  <!-- Modal -->
@@ -122,6 +149,11 @@
     </div>
   </div>
 </div>
+	  
+	  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 	  
   </body>
 </html>
