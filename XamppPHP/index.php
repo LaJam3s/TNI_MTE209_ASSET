@@ -22,7 +22,7 @@
   </head>	
   <?php
   include('connect.php');
-  $sql = "select * from employee";
+  $sql = "select * from employee e, department d where e.dep_id=d.dep_id";
   $query = $db -> query($sql);
   $row = $query -> num_rows;
   ?>
@@ -54,15 +54,27 @@
 		</tr>
 	  </thead>
 	  <tbody>
+		<?php
+		for( $i=1; $i<=$row; $i++ ){
+			$record = $query -> fetch_assoc();
+
+			if( $record['emp_gender']=="m" ){
+				$gender = "ผู้ชาย";
+			}else {
+				$gender = "ผู้หญิง";
+			}
+
+		?>
 		<tr>
-		  <th>?</th>
-		  <td>?</td>
-		  <td>?</td>
-		  <td>?</td>
-	      <td>?</td>
+		  <th><?php echo $record['emp_id']; ?></th>
+		  <td><?php echo $record['emp_fullname']; ?></td>
+		  <td><?php echo $record['emp_email']; ?></td>
+		  <td><?php echo $gender; ?></td>
+	      <td><?php echo $record['dep_name']; ?></td>
 		  <td><a href="#" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> Update</a></td>
 		  <td><a href="#" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> Delete</a></td>		
 		</tr>
+		<?php } ?>
 	  </tbody>
 	</table>
 	
@@ -77,7 +89,7 @@
 			<h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลพนักงาน</h5>
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<form action="" method="POST">
+		<form action="insertsave.php" method="POST">
 		<div class="modal-body">
 			<div>
 				<label class="form-label">ชื่อ นามสกุล</label>
@@ -101,7 +113,16 @@
 			<div class="mt-2">
 				<label class="form-label">สาขา</label>
 				<select class="form-select" name="department">
-					<option value="131">IT</option>
+					<?php
+					$sql2 = "select * from department";
+					$query2 = $db -> query($sql2);
+					$row2  = $query2 -> num_rows;
+
+					for( $d=1; $d<=$row2; $d++ ){
+						$record2 = $query2 -> fetch_assoc();
+					?>
+					<option value="<?php echo $record2['dep_id']; ?>"><?php echo $record2['dep_name']; ?></option>
+					<?php } ?>
 				</select>
 			</div>
 		</div>

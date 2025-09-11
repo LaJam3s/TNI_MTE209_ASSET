@@ -20,14 +20,19 @@
 		.buttonInsert{ position:absolute; right:12px; top:10px; }
 	</style>
   </head>	
-
+    <?php
+  include('connect.php');
+  $sql = "select * from employee e, department d where e.dep_id=d.dep_id";
+  $query = $db -> query($sql);
+  $row = $query -> num_rows;
+  ?>
   <body>
 <div class="container-lg container-fluid"  data-aos="fade-up" data-aos-duration="800">
 	
 	<h1>รายชื่อพนักงาน
 
 	<button type="button" class="btn btn-sm btn-info">
-  		จำนวน <span class="badge bg-secondary">??</span> คน 
+  		จำนวน <span class="badge bg-secondary"><?php echo $row; ?></span> คน 
 	</button>
 	
 	</h1>
@@ -44,14 +49,27 @@
 		</tr>
 	  </thead>
 	  <tbody>
+		<?php
+		for( $i=1; $i<=$row; $i++ ){
+			$record = $query -> fetch_assoc();
+
+			if( $record['emp_gender']=="m" ){
+				$gender = "ผู้ชาย";
+			}else {
+				$gender = "ผู้หญิง";
+			}
+
+		?>
 		<tr>
-		  <th>?</th>
-		  <td>?</td>
-		  <td>?</td>
-		  <td>?</td>
-	      <td>?</td>
-		  <td>?</td>
+		  <th><?php echo $record['emp_id']; ?></th>
+		  <td><?php echo $record['emp_fullname']; ?></td>
+		  <td><?php echo $record['emp_email']; ?></td>
+		  <td><?php echo $gender; ?></td>
+	      <td><?php echo $record['dep_name']; ?></td>
+		  <td><a href="#" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> Update</a></td>
+		  <td><a href="#" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> Delete</a></td>		
 		</tr>
+		<?php } ?>
 	  </tbody>
 	</table>
 	
