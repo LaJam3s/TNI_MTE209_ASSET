@@ -20,14 +20,19 @@
 		.buttonInsert{ position:absolute; right:12px; top:10px; }
 	</style>
   </head>	
-
+  <?php
+  include('connect.php');
+  $sql = "select * from employee";
+  $query = $db -> query($sql);
+  $row = $query -> num_rows;
+  ?>
   <body>
 <div class="container-lg container-fluid"  data-aos="fade-up" data-aos-duration="1000">
 	
 	<h1>Employee List
 
 	<button type="button" class="btn btn-sm btn-info">
-  		<span class="badge bg-secondary">??</span> records 
+  		<span class="badge bg-secondary"><?php echo $row; ?></span> records 
 	</button>
 	
 	</h1>
