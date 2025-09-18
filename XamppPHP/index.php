@@ -71,8 +71,8 @@
 		  <td><?php echo $record['emp_email']; ?></td>
 		  <td><?php echo $gender; ?></td>
 	      <td><?php echo $record['dep_name']; ?></td>
-		  <td><a href="#" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> Update</a></td>
-		  <td><a href="#" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> Delete</a></td>		
+		  <td><a href="updateForm.php?employee=<?php echo $record['emp_id']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-user-edit"></i> Update</a></td>
+		  <td><a onlick="return confirm('Deleting <?php echo $record['emp_fullname']; ?>');" href="delete.php?employee=<?php echo $record['emp_id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-user-minus"></i> Delete</a></td>		
 		</tr>
 		<?php } ?>
 	  </tbody>
