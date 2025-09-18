@@ -43,6 +43,7 @@ $record = $query -> fetch_assoc();
       <h3 class="text-center mt-2 display-6 fs-3"   data-aos="fade-up" data-aos-duration="800">แก้ไขข้อมูลพนักงาน</h3>
         <div class="col-sm-9 col-md-7 col-lg-6 mx-auto p-4 border rounded-3 bg-light mt-4"  data-aos="fade-up"  data-aos-delay="400" data-aos-duration="1000">
             <form action="updatesave.php" method="POST">
+                <input type="hidden" name="employee" value="<?php echo $employee; ?>">
                 <div>
                     <label class="form-label">ชื่อ นามสกุล</label>
                     <input value="<?php echo $record['emp_fullname']?>" class="form-control" name="fullname" type="text">
@@ -59,7 +60,7 @@ $record = $query -> fetch_assoc();
                     <label class="form-label">เพศ</label>
                     <select class="form-select" name="gender">
                         <option value="m">ผู้ชาย</option>
-                        <option value="f">ผู้หญิง</option>
+                        <option <?php if( $record['emp_gender']=='f' ){echo "selected"; } ?> value="f">ผู้หญิง</option>
                     </select>
                 </div>
                 <div class="mt-3">
@@ -75,7 +76,7 @@ $record = $query -> fetch_assoc();
                         for( $m=1; $m<=$row2; $m++ ){
                             $record2 = $result2 -> fetch_assoc();
                         ?>
-                        <option value="<?php echo $record2['dep_id'] ?>">
+                        <option <?php if( $record['dep_id']==$record2['dep_id'] ){echo "selected"; } ?> value="<?php echo $record2['dep_id'] ?>">
                             <?php echo $record2['dep_name'] ?>
                         </option>
                         <?php } ?>
