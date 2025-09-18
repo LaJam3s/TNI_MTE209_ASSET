@@ -21,22 +21,39 @@
   </head>
 <?php
 include('connect.php');
+
+// Get Value ahh
+$employee = $_GET['employee'];
+
+
+include('connect.php');
+
+
+$sql = "select * from employee
+        where emp_id=$employee";
+$query = $db -> query($sql);
+
+
+$record = $query -> fetch_assoc();
+
+
+
 ?>
   <body>
       <h3 class="text-center mt-2 display-6 fs-3"   data-aos="fade-up" data-aos-duration="800">แก้ไขข้อมูลพนักงาน</h3>
         <div class="col-sm-9 col-md-7 col-lg-6 mx-auto p-4 border rounded-3 bg-light mt-4"  data-aos="fade-up"  data-aos-delay="400" data-aos-duration="1000">
-            <form action="" method="POST">
+            <form action="updatesave.php" method="POST">
                 <div>
                     <label class="form-label">ชื่อ นามสกุล</label>
-                    <input value="" class="form-control" name="fullname" type="text">
+                    <input value="<?php echo $record['emp_fullname']?>" class="form-control" name="fullname" type="text">
                 </div>
                 <div class="mt-3">
                     <label class="form-label">Email</label>
-                    <input value="" class="form-control" name="email" type="email">
+                    <input value="<?php echo $record['emp_email']?>" class="form-control" name="email" type="email">
                 </div>
                 <div class="mt-3">
                     <label class="form-label">Mobile</label>
-                    <input value="" class="form-control" name="mobile" type="text">
+                    <input value="<?php echo $record['emp_mobile']?>" class="form-control" name="mobile" type="text">
                 </div>
                 <div class="mt-3">
                     <label class="form-label">เพศ</label>
